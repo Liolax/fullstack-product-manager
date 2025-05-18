@@ -18,17 +18,15 @@ function App() {
       </Router>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+          <h1>Cloud Application Development Project</h1>
+          <h2>Project Overview</h2>
+          <p>
+            This full-stack web application demonstrates product management using Ruby on Rails (API) and React.<br />
+            Features include CRUD operations, filtering, validation, and testing.<br />
+            The project is deployed to a public cloud and follows professional design and testing practices.
+          </p>
+        </div>
       </header>
     </div>
   );

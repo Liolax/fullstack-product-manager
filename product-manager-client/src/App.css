@@ -308,32 +308,23 @@ div[style*='color: red'],
 /* Product Detail Action Buttons */
 .product-detail-actions {
   display: flex;
-  gap: 0.75rem;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
-  margin: 1.2rem 0 0.5rem 0;
+  gap: 1rem;
+  margin: 1.5rem 0 0.5rem 0;
 }
 
+.product-detail-actions .edit-btn,
 .product-detail-actions .delete-btn {
-  background-color: #dc3545;
-  color: #fff;
+  margin: 0;
 }
 
-.product-detail-actions .delete-btn:hover {
-  background-color: #c82333;
-}
-
-.product-detail-back {
+.back-to-list-btn {
+  margin-left: auto;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
   display: inline-block;
-  margin-top: 0.5rem;
-  color: #007bff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.product-detail-back:hover {
-  color: #0056b3;
-  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
@@ -407,6 +398,18 @@ div[style*='color: red'],
   select {
     padding: 0.65rem 0.85rem;
     font-size: 1rem;
+  }
+  .product-detail-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    margin: 1rem 0 0.5rem 0;
+  }
+  .back-to-list-btn {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
   }
 }
 

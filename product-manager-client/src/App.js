@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <div>
+        <div className="App-header-content">
+          <img src={logo} className="App-logo" alt="logo" />
           <h1>Cloud Application Development Project</h1>
           <p>
             This full-stack web application demonstrates product management using Ruby on Rails (API) and React.<br />

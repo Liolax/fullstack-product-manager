@@ -178,16 +178,36 @@ input[type='button'].danger:hover {
   background-color: #c82333;
 }
 
-/* Action Buttons */
+/* Enhanced Product Detail Action Buttons */
+.product-detail-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0 1rem 0;
+  flex-wrap: wrap;
+}
+
+.product-detail-actions .action-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.edit-btn,
+.delete-btn,
+.back-to-list-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Specific button colors */
 .edit-btn {
   background-color: #28a745;
   color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background-color 0.2s ease-in-out;
 }
 
 .edit-btn:hover {
@@ -197,12 +217,6 @@ input[type='button'].danger:hover {
 .delete-btn {
   background-color: #dc3545;
   color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background-color 0.2s ease-in-out;
 }
 
 .delete-btn:hover {
@@ -212,12 +226,6 @@ input[type='button'].danger:hover {
 .back-to-list-btn {
   background-color: #6c757d;
   color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background-color 0.2s ease-in-out;
 }
 
 .back-to-list-btn:hover {

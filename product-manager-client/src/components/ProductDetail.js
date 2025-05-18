@@ -24,10 +24,13 @@ function ProductDetail() {
       <p>{product.description}</p>
       <p>Price: ${product.price}</p>
       <p>Status: {product.available ? 'Available' : 'Unavailable'}</p>
-      <Link to={`/edit/${product.id}`}>Edit</Link>
-      <button onClick={handleDelete}>Delete</button>
-      <br />
-      <Link to="/">Back to list</Link>
+      <div className="product-detail-actions">
+        <div className="action-group">
+          <Link className="edit-btn" to={`/edit/${product.id}`}>Edit</Link>
+          <button className="delete-btn" onClick={handleDelete}>Delete</button>
+        </div>
+        <Link className="back-to-list-btn" to="/">Back to list</Link>
+      </div>
     </div>
   );
 }

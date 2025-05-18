@@ -256,16 +256,16 @@ div[style*='color: red'],
 
 .product-detail-actions {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin: 2rem 0;
-  flex-wrap: wrap;
+  padding: 0 1rem;
 }
 
 .product-detail-actions .action-group {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
 }
 
 .edit-btn,
@@ -300,6 +300,7 @@ div[style*='color: red'],
 .back-to-list-btn {
   background-color: #6c757d;
   color: #fff;
+  margin-left: auto;
 }
 
 .back-to-list-btn:hover {
@@ -383,6 +384,7 @@ div[style*='color: red'],
     align-items: stretch;
     gap: 0.5rem;
     margin: 1rem 0 0.5rem 0;
+    padding: 0;
   }
   .back-to-list-btn {
     margin-left: 0;

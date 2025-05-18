@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "*" # Or restrict to your frontend domain
+    origins "https://fullstack-product-manager.vercel.app", "https://product-manager-client-ten.vercel.app", "https://product-manager-client-7wm8mmpib-liolaxs-projects.vercel.app"
     resource "*",
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head]

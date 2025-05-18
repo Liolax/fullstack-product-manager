@@ -26,7 +26,11 @@
 # threads. This includes Active Record's `pool` parameter in `database.yml`.
 #
 # Set the number of Puma workers (processes)
-workers Integer(ENV.fetch("WEB_CONCURRENCY", 2))
+if Gem.win_platform?
+  # Do not set workers on Windows; cluster mode is not supported
+else
+  workers Integer(ENV.fetch("WEB_CONCURRENCY", 2))
+end
 
 # Set the number of threads per worker
 threads_count = Integer(ENV.fetch("RAILS_MAX_THREADS", 5))

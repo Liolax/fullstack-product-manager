@@ -10,23 +10,23 @@ function ProductList() {
     let available;
     if (filter === 'available') available = true;
     else if (filter === 'unavailable') available = false;
-    getProducts(available).then(res => setProducts(res.data));
+    getProducts(available).then((res) => setProducts(res.data));
   }, [filter]);
 
   return (
     <div>
       <h2>Products</h2>
       <Link to="/add">Add Product</Link>
-      <div>
+      <div style={{ marginTop: '1rem' }}>
         <label>Filter: </label>
-        <select value={filter} onChange={e => setFilter(e.target.value)}>
+        <select value={filter} onChange={(e) => setFilter(e.target.value)}>
           <option value="all">All</option>
           <option value="available">Available</option>
           <option value="unavailable">Unavailable</option>
         </select>
       </div>
       <ul>
-        {products.map(p => (
+        {products.map((p) => (
           <li key={p.id}>
             <Link to={`/products/${p.id}`}>{p.name}</Link>
             {p.available ? ' (Available)' : ' (Unavailable)'}

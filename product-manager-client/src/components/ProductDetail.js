@@ -8,7 +8,7 @@ function ProductDetail() {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    getProduct(id).then(res => setProduct(res.data));
+    getProduct(id).then((res) => setProduct(res.data));
   }, [id]);
 
   const handleDelete = async () => {

@@ -16,7 +16,7 @@ function ProductForm() {
 
   useEffect(() => {
     if (isEdit) {
-      getProduct(id).then(res => {
+      getProduct(id).then((res) => {
         setForm({
           name: res.data.name,
           description: res.data.description,
@@ -27,21 +27,21 @@ function ProductForm() {
     }
   }, [id, isEdit]);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setForm(f => ({
-      ...f,
+    setForm((prev) => ({
+      ...prev,
       [name]: type === 'checkbox' ? checked : value,
     }));
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Basic validation
     if (!form.name || !form.description || form.price === '' || isNaN(Number(form.price)) || Number(form.price) < 0) {
       setErrors(['Please fill all fields correctly.']);
       return;
     }
+
     try {
       if (isEdit) {
         await updateProduct(id, form);
@@ -59,22 +59,40 @@ function ProductForm() {
       <h2>{isEdit ? 'Edit Product' : 'Add Product'}</h2>
       {errors.length > 0 && (
         <div style={{ color: 'red' }}>
-          {errors.map((e, i) => <div key={i}>{e}</div>)}
+          {errors.map((e, index) => (
+            <div key={index}>{e}</div>
+          ))}
         </div>
       )}
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Name: <input name="name" value={form.name} onChange={handleChange} required /></label>
-        </div>
-        <div>
-          <label>Description: <input name="description" value={form.description} onChange={handleChange} required /></label>
-        </div>
-        <div>
-          <label>Price: <input name="price" type="number" min="0" step="0.01" value={form.price} onChange={handleChange} required /></label>
+          <label>
+            Name: <input name="name" value={form.name} onChange={handleChange} required />
+          </label>
         </div>
         <div>
           <label>
-            Available: <input name="available" type="checkbox" checked={form.available} onChange={handleChange} />
+            Description: <input name="description" value={form.description} onChange={handleChange} required />
+          </label>
+        </div>
+        <div>
+          <label>
+            Price:{' '}
+            <input
+              name="price"
+              type="number"
+              min="0"
+              step="0.01"
+              value={form.price}
+              onChange={handleChange}
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Available:{' '}
+            <input name="available" type="checkbox" checked={form.available} onChange={handleChange} />
           </label>
         </div>
         <button type="submit">{isEdit ? 'Update' : 'Create'}</button>

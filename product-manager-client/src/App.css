@@ -260,23 +260,24 @@ div[style*='color: red'],
   justify-content: space-between;
   margin: 2rem 0;
   padding: 0 1rem;
+  gap: 2rem;
 }
 
 .product-detail-actions .action-group {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: center;
 }
 
 .edit-btn,
 .delete-btn,
 .back-to-list-btn {
-  padding: 0.6rem 1.2rem;
-  font-size: 0.9rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
   border-radius: 4px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.2s, box-shadow 0.2s;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .edit-btn {

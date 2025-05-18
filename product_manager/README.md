@@ -20,3 +20,24 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+
+# Product Manager Backend (Rails)
+
+## Setup
+```sh
+bundle install
+rails db:setup
+rails server
+```
+
+## Testing
+```sh
+rails test
+rails test:system
+```
+
+## Deployment
+- See Dockerfile and deployment scripts.
+
+## GitHub
+> _Add your GitHub repository link here._

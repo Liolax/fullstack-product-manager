@@ -8,14 +8,6 @@ import ProductForm from './components/ProductForm';
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/" element={<ProductList />} />
-          <Route path="/products/:id" element={<ProductDetail />} />
-          <Route path="/add" element={<ProductForm />} />
-          <Route path="/edit/:id" element={<ProductForm />} />
-        </Routes>
-      </Router>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <div>
@@ -28,6 +20,17 @@ function App() {
           </p>
         </div>
       </header>
+      <Router>
+        {/* Optionally add a navigation bar here */}
+        <main>
+          <Routes>
+            <Route path="/" element={<ProductList />} />
+            <Route path="/products/:id" element={<ProductDetail />} />
+            <Route path="/add" element={<ProductForm />} />
+            <Route path="/edit/:id" element={<ProductForm />} />
+          </Routes>
+        </main>
+      </Router>
     </div>
   );
 }

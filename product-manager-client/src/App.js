@@ -12,7 +12,6 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <div>
           <h1>Cloud Application Development Project</h1>
-          <h2>Project Overview</h2>
           <p>
             This full-stack web application demonstrates product management using Ruby on Rails (API) and React.<br />
             Features include CRUD operations, filtering, validation, and testing.<br />
@@ -21,7 +20,12 @@ function App() {
         </div>
       </header>
       <Router>
-        {/* Optionally add a navigation bar here */}
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/add">Add Product</a></li>
+          </ul>
+        </nav>
         <main>
           <Routes>
             <Route path="/" element={<ProductList />} />

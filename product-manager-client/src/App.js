@@ -20,12 +20,6 @@ function App() {
         </div>
       </header>
       <Router>
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/add">Add Product</a></li>
-          </ul>
-        </nav>
         <main>
           <Routes>
             <Route path="/" element={<ProductList />} />

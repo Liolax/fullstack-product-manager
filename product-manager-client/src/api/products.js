@@ -1,6 +1,8 @@
 import axios from 'axios';
 // Use environment variable or fallback to localhost for development
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3000/products';
+const API_URL =
+  process.env.REACT_APP_API_URL ||
+  'https://product-manager-nqc0.onrender.com/products';
 
 export const getProducts = (available) =>
   axios.get(API_URL, { params: available !== undefined ? { available } : {} });

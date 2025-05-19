@@ -3,7 +3,8 @@ require "application_system_test_case"
 class ProductsTest < ApplicationSystemTestCase
   test "creating, viewing, editing, and deleting a product" do
     visit products_url
-    # ...existing code for visiting index...
+    assert_selector "h1", text: "Products"
+    assert_selector "ul"
 
     click_on "New Product"
     fill_in "Name", with: "Integration Test Product"

@@ -1,3 +1,4 @@
+/* Global body and font settings */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,6 +9,7 @@ body {
   color: #333;
 }
 
+/* App container and logo styles */
 .App {
   text-align: center;
 }
@@ -27,6 +29,7 @@ body {
   }
 }
 
+/* Header styles */
 .App-header {
   background-color: #343a40;
   padding: 1rem 0.5rem;
@@ -48,6 +51,7 @@ body {
   padding: 0.5rem 0;
 }
 
+/* Header text */
 .App-header h1 {
   font-size: 1.2rem;
   margin-bottom: 0.25rem;
@@ -64,6 +68,7 @@ body {
   opacity: 0.85;
 }
 
+/* Link styles */
 .App-link {
   color: #80bfff;
   text-decoration: none;
@@ -74,11 +79,13 @@ body {
   color: #b3d9ff;
 }
 
+/* Logo animation */
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
+/* Main content area */
 main {
   max-width: 850px;
   margin: 2rem auto;
@@ -88,6 +95,7 @@ main {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
+/* Headings */
 h2 {
   margin-top: 0;
   color: #2c3e50;
@@ -97,6 +105,7 @@ h2 {
   padding-bottom: 0.4rem;
 }
 
+/* List and list item styles */
 ul {
   list-style: none;
   padding: 0;
@@ -119,6 +128,7 @@ li:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
+/* Anchor (a) styles */
 a {
   color: #007bff;
   text-decoration: none;
@@ -131,6 +141,7 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Button and input styles */
 button,
 input[type='submit'] {
   background-color: #007bff;
@@ -174,6 +185,7 @@ input[type='button'].danger:hover {
   background-color: #c82333;
 }
 
+/* Form styles */
 form {
   display: flex;
   flex-direction: column;
@@ -243,6 +255,7 @@ select {
   padding-right: 2.5rem;
 }
 
+/* Error message styles */
 div[style*='color: red'],
 .error-message {
   background: #f8d7da;
@@ -254,6 +267,7 @@ div[style*='color: red'],
   font-size: 0.9rem;
 }
 
+/* Product detail action buttons */
 .product-detail-actions {
   display: flex;
   align-items: center;
@@ -308,6 +322,7 @@ div[style*='color: red'],
   background-color: #5a6268;
 }
 
+/* Responsive design for tablets */
 @media (max-width: 768px) {
   .App-header h1 {
     font-size: 1.1rem;
@@ -325,6 +340,7 @@ div[style*='color: red'],
   }
 }
 
+/* Responsive design for mobile */
 @media (max-width: 600px) {
   .App-logo {
     height: 24px;
@@ -395,6 +411,7 @@ div[style*='color: red'],
   }
 }
 
+/* Utility classes */
 .mt-2 { margin-top: 2rem !important; }
 .mb-2 { margin-bottom: 2rem !important; }
 .text-center { text-align: center !important; }

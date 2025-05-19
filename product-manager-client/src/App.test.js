@@ -2,7 +2,6 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
 import ProductList from './components/ProductList';
-import ProductDetail from './components/ProductDetail';
 import ProductForm from './components/ProductForm';
 
 test('renders learn react link', () => {

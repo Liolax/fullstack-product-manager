@@ -40,4 +40,4 @@ rails test:system
 - See Dockerfile and deployment scripts.
 
 ## GitHub
-> _Add your GitHub repository link here._
+- https://github.com/Liolax/fullstack-product-manager.git

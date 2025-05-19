@@ -18,4 +18,4 @@ npm test
 - Build with `npm run build`.
 
 ## GitHub
-> _Add your GitHub repository link here._
+- https://github.com/Liolax/fullstack-product-manager.git

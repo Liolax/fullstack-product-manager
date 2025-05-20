@@ -24,6 +24,7 @@ test('renders ProductList and shows filter options', async () => {
   getProducts.mockResolvedValueOnce({ data: [] });
   render(<ProductList />);
   expect(screen.getByText('Products')).toBeInTheDocument();
+  // Wait for the filter select to appear (async)
   await screen.findByLabelText(/Filter/i);
 });
 

@@ -1,15 +1,16 @@
 class Product < ApplicationRecord
-  # Ensure that new records get a default value for available
-  after_initialize :set_default_available, if: :new_record?
+  attribute :available, :boolean, default: true
+
+  before_validation :set_default_available
 
   validates :name, presence: true
   validates :description, presence: true
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 }
-  validates :available, inclusion: { in: [true, false] }, allow_nil: true
+  validates :available, inclusion: { in: [true, false], strict: true }
 
   private
 
   def set_default_available
-    self.available = true if self.available.nil?
+    self.available = true if available.nil?
   end
 end

@@ -3,32 +3,35 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
 import ProductList from './components/ProductList';
 import ProductForm from './components/ProductForm';
+import { getProducts } from './api/products';
 
-test('renders learn react link', () => {
+jest.mock('react-router-dom', () => ({
+  BrowserRouter: ({ children }) => <div>{children}</div>,
+  Routes: ({ children }) => <div>{children}</div>,
+  Route: () => null,
+  Link: ({ children, ...props }) => <a {...props}>{children}</a>,
+  useNavigate: () => jest.fn(),
+  useParams: () => ({}),
+}));
+jest.mock('./api/products');
+
+test('renders App header', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByText(/Cloud Application Development Project/i)).toBeInTheDocument();
 });
 
-test('renders ProductList and filters products', () => {
-  // Mock products data
-  const products = [
-    { id: 1, name: 'Test Product', available: true },
-    { id: 2, name: 'Unavailable Product', available: false }
-  ];
-  render(<ProductList products={products} />);
-  expect(screen.getByText('Test Product')).toBeInTheDocument();
-  // ...add filter interaction and assertions...
-});
-
-test('renders ProductDetail and handles delete', () => {
-  // ...mock product and delete handler...
-  // ...render and assert...
+test('renders ProductList and shows filter options', async () => {
+  getProducts.mockResolvedValueOnce({ data: [] });
+  render(<ProductList />);
+  expect(screen.getByText('Products')).toBeInTheDocument();
+  await screen.findByLabelText(/Filter/i);
 });
 
 test('validates ProductForm input', () => {
   render(<ProductForm />);
   fireEvent.change(screen.getByLabelText(/Name/i), { target: { value: '' } });
-  fireEvent.click(screen.getByText(/Submit/i));
-  expect(screen.getByText(/Name is required/i)).toBeInTheDocument();
+  fireEvent.change(screen.getByLabelText(/Description/i), { target: { value: '' } });
+  fireEvent.change(screen.getByLabelText(/Price/i), { target: { value: '-1' } });
+  fireEvent.click(screen.getByText(/Create/i));
+  expect(screen.getByText(/Please fill all fields correctly/i)).toBeInTheDocument();
 });

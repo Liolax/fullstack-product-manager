@@ -18,8 +18,12 @@ function ProductList() {
       <h2>Products</h2>
       <Link to="/add">Add Product</Link>
       <div style={{ marginTop: '1rem' }}>
-        <label>Filter: </label>
-        <select value={filter} onChange={(e) => setFilter(e.target.value)}>
+        <label htmlFor="filter-select">Filter: </label>
+        <select
+          id="filter-select"
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+        >
           <option value="all">All</option>
           <option value="available">Available</option>
           <option value="unavailable">Unavailable</option>

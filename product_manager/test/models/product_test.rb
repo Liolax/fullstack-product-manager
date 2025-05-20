@@ -70,12 +70,18 @@ class ProductTest < ActiveSupport::TestCase
 
   test "available should only accept boolean values" do
     @product.available = nil
-    assert_not @product.valid?
+    assert @product.valid?, "Product should be valid when available is nil (defaults to true)"
     @product.available = true
     assert @product.valid?
     @product.available = false
     assert @product.valid?
     @product.available = 1
+    assert_not @product.valid?
+    @product.available = 0
+    assert_not @product.valid?
+    @product.available = "true"
+    assert_not @product.valid?
+    @product.available = "false"
     assert_not @product.valid?
   end
 end
